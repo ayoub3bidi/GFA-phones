@@ -1,0 +1,79 @@
+<div id="demo" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="http://3.bp.blogspot.com/-smZs0Sb-iuo/VRWrz2J_kyI/AAAAAAAAGjY/jxnJNFC0RX0/s1600/4.png" width="1100" height="500">
+      <div class="carousel-caption">
+        <h3>Les Meilleurs Marques</h3>
+        <p>Nous vous offre les meilleurs marques</p>
+      </div>   
+    </div>
+    <div class="carousel-item">
+      <img src="https://t4.ftcdn.net/jpg/02/13/60/67/360_F_213606796_RSW4dT2Rw04NjdrEJXzcLyZwdo8RGGdY.jpg" width="1100" height="500">
+      <div class="carousel-caption">
+        <h3>Les Meilleurs accessoires</h3>
+        <p>Nous vous offre les meilleurs accessoires</p>
+      </div>   
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.mobiledokan.co/wp-content/uploads/2020/05/Best-Mobile-Phone-Brands-in-Bangladesh.jpg" width="1100" height="500">
+      <div class="carousel-caption">
+        <h3>Les Meilleurs Marques</h3>
+        <p>Nous vous offre les meilleurs Marques</p>
+      </div>   
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+<br>
+<div class="container">
+      <div class="row">
+        <h2 class="display-4">Nos Promos</h2>
+        <div class="card-columns">
+          <div *ngFor="let promo of promos">
+            <div class="card">
+              <div class="card-body text-center">
+                <h4 class="card-title">{{ promo.Name }}</h4>
+                <h1>{{ promo.Prix }} DT</h1>
+                <a (click)="addToCart()" class="btn btn-success">Acheter</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <br>
+        <h2 class="display-4">Nos Produits</h2>
+        <div class="card-columns">
+          <div *ngFor="let product of products">
+            <div class="card">
+              <img class="card-img-top" [src]="product.img" style="width:100%">
+              <div class="card-body text-center">
+                <h4 class="card-title">{{ product.Name }}</h4>
+                <p class="card-text"><b>Ecran:</b> {{ product.Ecran }}; <b>Processeur:</b> {{ product.Processeur }};
+                  <b>Systéme d'exploitation:</b>{{ product.Systeme }}; <b>Ram:</b>{{ product.Ram }};
+                  <b>Stockage:</b>{{ product.Stockage }}; <b>Batterie:</b>{{ product.Batterie }}</p>
+                <h1>{{ product.Prix }} DT</h1>
+                <a [routerLink]="['/product/', product.id]" class="btn btn-dark" style="margin: 5px;">Plus de
+                  detaille</a>
+                <!-- <a (click)="addToCart()" class="btn btn-success">ajouter au panier</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="py-5">
+      <div class="container">
+        <div class=" text-center text-muted">Copyright © 2021 | GFA Phones
+        </div>
+      </div>
+    </footer>

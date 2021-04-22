@@ -1,0 +1,27 @@
+<div class="grid-container">
+    <br>
+    <div class="container">
+      <h2 class="display-4">Nos Accessoires</h2>
+      <div class="card-columns">
+        <div *ngFor="let product of products">
+          <div class="card">
+            <img class="card-img-top" [src]="product.img" style="width:100%">
+            <div class="card-body text-center">
+              <h4 class="card-title">{{ product.Name }}</h4>
+                <p class="card-text"><b>Coleur:</b> {{ product.Couleur }};</p>
+              <h1>{{ product.Prix }} DT</h1>
+              <a [routerLink]="['/accessoire/', product.id]" class="btn btn-dark" style="margin: 5px;">Plus de detaille</a>
+              <!-- <a (click)="addToCart()" class="btn btn-success">ajouter au panier</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <footer class="py-5">
+        <div class="container">
+          <div class=" text-center text-muted">Copyright © 2021 | GFA Phones
+          </div>
+        </div>
+      </footer>
+    </div>
+    
